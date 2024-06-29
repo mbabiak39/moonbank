@@ -1,7 +1,4 @@
 steps:
-  - name: "gcr.io/cloud-builders/git"
-    args: [ "clone", "https://github.com/mbabiak39/roimb-devopsuser10-dev.git", "." ]
-
   - name: "hashicorp/terraform:light"
     entrypoint: "sh"
     args:
