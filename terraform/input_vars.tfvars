@@ -15,3 +15,10 @@ topic = "activities"
 function = "pubsubtobq"
 
 function_sa = "plutosa"
+
+asset_list = [
+        "compute.googleapis.com/Instance",
+        "compute.googleapis.com/Image",
+        "compute.googleapis.com/Snapshot",
+        "storage.googleapis.com/Bucket",
+    ]

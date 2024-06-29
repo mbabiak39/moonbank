@@ -27,3 +27,7 @@ variable function_sa {
   type = string
   description = "Cloud function service account name"
 }
+
+variable "asset_list" {
+  type = list(string)
+}
