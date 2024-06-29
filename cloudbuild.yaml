@@ -1,9 +1,7 @@
 steps:
-  # Step 1: Check out the source code from the GitHub repository
   - name: "gcr.io/cloud-builders/git"
     args: ["clone", "https://github.com/mbabiak39/roimb-devopsuser10-dev.git", "."]
 
-  # Step 2: Initialize Terraform and configure backend
   - name: "hashicorp/terraform:light"
     entrypoint: "sh"
     args:
@@ -13,7 +11,6 @@ steps:
         terraform init \
           -input=false \
 
-  # Step 3: Terraform Plan
   - name: "hashicorp/terraform:light"
     entrypoint: "sh"
     args:
@@ -25,7 +22,6 @@ steps:
           -var-file=input_vars.tfvars \
           -out=tfplan
 
-  # Step 4: Terraform Apply
   - name: "hashicorp/terraform:light"
     entrypoint: "sh"
     args:
