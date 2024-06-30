@@ -1,5 +1,5 @@
-resource "google_storage_bucket" "pluto_bucket" {
+resource "google_storage_bucket" "cloud_functions_dev" {
   project  = var.project_id
-  name     = "${var.project_id}"
+  name     = "cloud_functions_dev"
   location = "US"
 }
