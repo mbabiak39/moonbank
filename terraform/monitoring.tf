@@ -30,9 +30,10 @@ resource "google_monitoring_alert_policy" "low_cpu_alert" {
 # Pub/Sub Notification channel
 resource "google_monitoring_notification_channel" "pubsub_channel" {
   type = "pubsub"
-  display_name = "Idle VM channel"
+  display_name = "Pub/Sub Channel"
   description = "Pub/Sub channel for low CPU usage alerts"
   labels = {
     topic = google_pubsub_topic.idle_vm_topic.id
   }
+
 }
