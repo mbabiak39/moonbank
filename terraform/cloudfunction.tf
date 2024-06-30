@@ -26,4 +26,5 @@ resource "google_cloudfunctions_function" "stop_vm" {
     resource = google_pubsub_topic.idle_vm_topic.name
     event_type = "google.pubsub.topic.publish"
   }
+  service_account_email = google_service_account.service_account.email
 }
