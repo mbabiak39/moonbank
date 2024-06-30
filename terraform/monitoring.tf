@@ -6,7 +6,7 @@ resource "google_monitoring_alert_policy" "low_cpu_alert" {
     condition_threshold {
       filter = "metric.type=\"compute.googleapis.com/instance/cpu/utilization\" AND resource.type=\"gce_instance\""
       comparison = "COMPARISON_LT"
-      threshold_value = 5.0
+      threshold_value = 3.0
       duration = "60s"
       aggregations {
         alignment_period = "60s"
