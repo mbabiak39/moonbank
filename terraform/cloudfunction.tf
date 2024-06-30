@@ -11,7 +11,6 @@ resource "google_cloudfunctions_function" "function" {
     resource = google_pubsub_topic.topic.name
     event_type = "google.pubsub.topic.publish"
   }
-  service_account_email = google_service_account.service_account.email
 }
 
 resource "google_cloudfunctions_function" "stop_vm" {
