@@ -10,7 +10,7 @@ resource "google_monitoring_alert_policy" "low_cpu_alert" {
       duration = "60s"
       aggregations {
         alignment_period = "60s"
-        per_series_aligner = "ALIGN_RATE"
+        per_series_aligner = "ALIGN_MEAN"
         cross_series_reducer = "REDUCE_MEAN"
         group_by_fields = [
           "metric.label.\"instance_name\""]
