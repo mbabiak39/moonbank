@@ -3,8 +3,11 @@ resource "google_service_account" "service_account" {
 }
 
 resource "google_project_iam_member" "function_sa_binding" {
+  for_each = toset([
+    "roles/viewer",
+    "roles/compute.instanceAdmin.v1"])
   project = var.project_id
-  role = "roles/viewer"
+  role = each.key
   member = "serviceAccount:${google_service_account.service_account.email}"
 }
 
