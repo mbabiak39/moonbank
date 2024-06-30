@@ -6,17 +6,17 @@ resource "google_monitoring_alert_policy" "low_cpu_alert" {
     condition_threshold {
       filter = "metric.type=\"compute.googleapis.com/instance/cpu/utilization\" AND resource.type=\"gce_instance\""
       comparison = "COMPARISON_LT"
-      threshold_value = 3.0
-      duration = "5s"
+      threshold_value = 10.0
+      duration = "60s"
       aggregations {
-        alignment_period = "5s"
+        alignment_period = "60s"
         per_series_aligner = "ALIGN_MEAN"
         cross_series_reducer = "REDUCE_MEAN"
         group_by_fields = [
           "metric.label.\"instance_name\""]
       }
       trigger {
-        count = 12
+        count = 1
       }
     }
   }
