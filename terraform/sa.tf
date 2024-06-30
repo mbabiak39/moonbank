@@ -34,6 +34,6 @@ resource "google_project_iam_member" "monitoring_roles" {
     "roles/pubsub.publisher"
   ])
   project = var.project_id
-  member = "serviceAccount: service-${data.google_project.project.number}@gcp-sa-monitoring-notification.iam.gserviceaccount.com"
+  member = "serviceAccount:service-${data.google_project.project.number}@gcp-sa-monitoring-notification.iam.gserviceaccount.com"
   role = each.key
 }
