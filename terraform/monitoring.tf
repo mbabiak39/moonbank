@@ -4,7 +4,7 @@ resource "google_monitoring_alert_policy" "low_cpu_alert" {
   conditions {
     display_name = "Low CPU Usage"
     condition_threshold {
-      filter = "metric.type=\"compute.googleapis.com/instance/cpu/utilization\" AND resource.type=\"gce_instance\""
+      filter = "metric.type=\"compute.googleapis.com/instance/cpu/utilization\""
       comparison = "COMPARISON_LT"
       threshold_value = 5.0
       duration = "60s"
