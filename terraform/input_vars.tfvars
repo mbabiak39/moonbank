@@ -5,7 +5,8 @@ services = [
   "containerregistry.googleapis.com",
   "cloudresourcemanager.googleapis.com",
   "iam.googleapis.com",
-  "pubsub.googleapis.com"
+  "pubsub.googleapis.com",
+  "compute.googleapis.com"
   ]
 
 project_id = "roimb-devopsuser10-dev"
