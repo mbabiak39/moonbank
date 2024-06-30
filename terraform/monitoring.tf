@@ -35,5 +35,4 @@ resource "google_monitoring_notification_channel" "pubsub_channel" {
   labels = {
     topic = google_pubsub_topic.idle_vm_topic.id
   }
-
 }
