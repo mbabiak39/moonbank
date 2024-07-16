@@ -32,7 +32,7 @@ resource "google_monitoring_alert_policy" "excessive_compute_creation_alert" {
   combiner     = "OR"
   conditions {
     condition_threshold {
-      filter          = "metric.type=\"logging.googleapis.com/user/compute_instance_creation_count\""
+      filter          = "metric.type=\"logging.googleapis.com/user/compute_instance_creation_count\" AND resource.type=\"gce_instance\""
       comparison      = "COMPARISON_GT"
       threshold_value = 5
       duration        = "120s"
@@ -50,7 +50,7 @@ resource "google_monitoring_alert_policy" "local_ssd_creation_alert" {
   combiner     = "OR"
   conditions {
     condition_threshold {
-      filter          = "metric.type=\"logging.googleapis.com/user/local_ssd_creation_count\""
+      filter          = "metric.type=\"logging.googleapis.com/user/local_ssd_creation_count\" AND resource.type=\"gce_instance\""
       comparison      = "COMPARISON_GT"
       threshold_value = 0
       duration        = "0s"
